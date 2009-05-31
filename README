@@ -1,0 +1,20 @@
+Database Trickle Archiver
+Type:
+Full Script 	Category:
+Database Manipulation
+License:
+MIT/X Consortium License 	Language:
+Ruby
+
+Originally posted at http://rubyforge.org/snippet/detail.php?type=snippet&id=234
+ 
+Description:
+Archives a mysql database table in small bite size portions. For example, if your database regularly reaches a 4GB limit and you would like to move two weeks of data to another table (tablename_date) that will simply archive the data; this script handles the process at whatever pace suits your system. It defaults to copying and deleting 10 records every 5 seconds, but is customizable.
+
+Provide the database login info, table name and field name for time stamp comparisons to the script along with a time stamp to begin and end. Other options include the number of records per transaction and time to sleep between transactions.
+
+The script requires the following gems: mysql, cooloptions, log4r and strscan.
+
+I've handled a lot of errors and different cases but please test it before you use it on your live database!
+
+Contributions to the code are very welcome. My top priority is to abstract the fixed time variables so it's possible to easily archive 2 weeks, 1 week or 1 day (etc) prior. This would be extremely helpful since it would make it simple to add cron jobs for schedule d archives. I'm sure there are plenty of other possible extensions. Feel free to tinker.
